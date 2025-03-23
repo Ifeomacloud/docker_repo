@@ -17,14 +17,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-from django.http import HttpResponse
-
-# Temporary view for testing the home page
-def home_view(request):
-    return HttpResponse("Welcome to the Home Page!")
 
 urlpatterns = [
-    path('', home_view, name='home'),  # This fixes the 404 error
     path('demo/', include('demo.urls')),
     path('admin/', admin.site.urls),
 ]
